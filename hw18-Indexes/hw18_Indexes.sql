@@ -1,0 +1,40 @@
+USE [Purposes]
+GO
+
+SET ANSI_PADDING ON
+GO
+
+/****** Object:  Index [IX_ObjectsProperties_PropertyName]    Script Date: 15.08.2021 12:55:44 ******/
+CREATE NONCLUSTERED INDEX [IX_ObjectsProperties_PropertyName] ON [dbo].[ObjectsProperties]
+(
+	[PropertyName] ASC
+)
+INCLUDE([PropertyID],[PropertyDescription],[UnitID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+
+/****** Object:  Index [IX_UsersInfo_Age]    Script Date: 15.08.2021 12:55:58 ******/
+CREATE NONCLUSTERED INDEX [IX_UsersInfo_Age] ON [dbo].[UsersInfo]
+(
+	[Age] ASC
+)
+INCLUDE([UserID],[CountryID],[CityID],[Sex]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+
+/****** Object:  Index [IX_UsersLogins_FullName]    Script Date: 15.08.2021 12:56:05 ******/
+CREATE NONCLUSTERED INDEX [IX_UsersLogins_FullName] ON [dbo].[UsersLogins]
+(
+	[FullName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+
+/****** Object:  Index [IX_Solutions_Rating]    Script Date: 15.08.2021 12:58:08 ******/
+CREATE NONCLUSTERED INDEX [IX_Solutions_Rating] ON [SqlGraph].[Solutions]
+(
+	[Rating] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+
